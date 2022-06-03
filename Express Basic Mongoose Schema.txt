@@ -1,0 +1,20 @@
+{
+	"Express Creating Basic Mongoose Schema": {
+		"scope": "javascript,typescript",
+		"prefix": "expschema",
+		"body": [
+			"const mongoose = require('mongoose');",
+			"",
+			"const $schemaSchema = mongoose.Schema({",
+			  "$name: { type: String, required: true },",
+			  "$lastName: { type: String, required: true },",
+			  "date: { type: Date, default: Date.now },",
+			  "updated_at: { type: Date, default: null },",
+			"});",
+			"",
+			"module.exports = mongoose.model('schema', $schemaSchema);"
+
+		],
+		"description": "Basic Mongoose Schema Snippet"
+	}
+}

@@ -1,0 +1,39 @@
+{
+	
+	"Express Start Snippet": {
+		"scope": "javascript,typescript",
+		"prefix": "expapp",
+		"body": [
+			"const express = require('express');",
+			"const mongoose = require('mongoose');",
+			"const bodyParser = require('body-parser');",
+			"require('dotenv').config();",
+			"",
+			"// import routes",
+			"const $subRouteName = require('./routes/$subRoute');",
+			"",
+			"const app = express();",
+			"",
+			"app.use(bodyParser.json());",
+			"",
+			"app.use('/$subRoutePath', $subRouteName);",
+			"",
+			"// Main Route",
+			"app.get('/', (req, res, next) => {",
+			"res.send('home page');",
+			"});",
+			"",
+			"// -----------------------------------",
+			"// connecting to the db",
+			"mongoose.connect(process.env.DATABASE_URL, () => {",
+			"console.log('connected to the database');",
+			"});",
+			"// -----------------------------------",
+			"// server starting",
+			"app.listen(process.env.PORT, () => {",
+			"console.log('server started');",
+			"});",
+		],
+		"description": "Creates the basic Express server start logic with requirements"
+	}
+}
