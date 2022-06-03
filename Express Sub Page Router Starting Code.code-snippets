@@ -61,7 +61,7 @@
 					"const data = await $schema.updateOne(",
 					"{ _id: req.params.id },",
 					"{",
-						"$set: {",
+						"\\$set: {",
 						"$name: req.body.name,",
 						"$lastName: req.body.lastName,",
 						"updated_at: Date.now(),",
