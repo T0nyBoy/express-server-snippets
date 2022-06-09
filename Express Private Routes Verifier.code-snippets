@@ -1,0 +1,29 @@
+{
+	"Express Private Routes Verifier": {
+		"scope": "javascript,typescript",
+		"prefix": "expprivateverifier",
+		"body": [
+			"const jwt = require('jsonwebtoken');",
+			"",
+			"// creating Auth verification middleware",
+			"const authVerifierRoute = (req, res, next) => {",
+			"// checking if the token is available in the header",
+			"const token = req.header('auth-token');",
+			"//   if token is not available then we send message of access denied",
+			"if (!token) return res.status(401).send({ message: 'Access Denied.' });",
+			"//   if token is available in the header we add the verification at the user",
+			"try {",
+				"const verified = jwt.verify(token, process.env.TOKEN_SECRET);",
+				"req.userData = verified;",
+				"next();",
+			"} catch (err) {",
+				"res.status(400).send({ message: 'Invalid Token.' });",
+			"}",
+			"};",
+			"",
+			"module.exports = authVerifierRoute;",
+
+		],
+		"description": "Log output to console"
+	}
+}

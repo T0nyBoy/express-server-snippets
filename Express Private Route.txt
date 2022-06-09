@@ -1,0 +1,19 @@
+{
+	"Create Private Route": {
+		"scope": "javascript,typescript",
+		"prefix": "expprivateroute",
+		"body": [
+			"const express = require('express');",
+			"const $makeItPrivate = require('./$privateRoutesVerifier');",
+			"",
+			"const router = express.Router();",
+			"",
+			"router.get('/', makeItPrivate, async (req, res) => {",
+			"res.status(200).send('private route');",
+			"});",
+			"",
+			"module.exports = router;",
+		],
+		"description": "Create Private Routes"
+	}
+}
