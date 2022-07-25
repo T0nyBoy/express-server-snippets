@@ -1,0 +1,32 @@
+{
+	"exproutescontrollers": {
+		"prefix": "exproutescontrollers",
+		"body": [
+		  "const express = require(\"express\");",
+		  "",
+		  "const {",
+		  "  getAllLists,",
+		  "  getOneList,",
+		  "  createList,",
+		  "  deleteList,",
+		  "  updateList,",
+		  "} = require(\"../controllers/ListsControllers\");",
+		  "",
+		  "const router = express.Router();",
+		  "",
+		  "router.get(\"/\", getAllLists);",
+		  "",
+		  "router.get(\"/:id\", getOneList);",
+		  "",
+		  "router.post(\"/\", createList);",
+		  "",
+		  "router.delete(\"/:id\", deleteList);",
+		  "",
+		  "router.patch(\"/:id\", updateList);",
+		  "",
+		  "module.exports = router;",
+		  ""
+		],
+		"description": "Express Routes with Controllers"
+	  }
+}
